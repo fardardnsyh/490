@@ -1,0 +1,16 @@
+.menu {
+    @include mobile-only {
+        padding: $spacing-1 0 !important;
+        background: $color-base-50;
+    }
+
+    @include tablet-up {
+        max-height: 50vh;
+        overflow: auto;
+    }
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}

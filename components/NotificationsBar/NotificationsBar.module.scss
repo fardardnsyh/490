@@ -1,0 +1,51 @@
+@import "variables";
+@import "mixins";
+
+.container {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.notification {
+    @include text-label;
+
+    min-height: 40px;
+    margin: 0;
+    padding: $spacing-3;
+    vertical-align: middle;
+    background-color: $color-base-300;
+    color: $color-text;
+    font-size: inherit;
+    text-align: center;
+
+    a {
+        &,
+        &:hover,
+        &:active,
+        &:visited,
+        &:focus {
+            color: inherit;
+            font-weight: $font-weight-semi-bold;
+            text-decoration: underline;
+        }
+    }
+
+    &.success {
+        background-color: $color-success-shade;
+        color: $color-base-white;
+    }
+
+    &.info {
+        background-color: $color-base-300;
+    }
+
+    &.danger {
+        background-color: $color-danger-shade;
+        color: $color-base-white;
+    }
+
+    &.warning {
+        background-color: $color-warning-bg;
+    }
+}

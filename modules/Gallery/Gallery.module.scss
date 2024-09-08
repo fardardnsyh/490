@@ -1,0 +1,45 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+
+    @include mobile-only {
+        margin: $spacing-4 auto;
+    }
+
+    :global {
+        /* stylelint-disable selector-class-pattern, max-nesting-depth */
+        .prezly-slate-gallery--contained {
+            max-width: 720px;
+        }
+
+        .prezly-slate-gallery--expanded {
+            position: static !important;
+            width: 100%;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+        /* stylelint-enable selector-class-pattern, max-nesting-depth */
+    }
+}
+
+.title {
+    p {
+        font-size: $font-size-l;
+        font-weight: $font-weight-regular;
+        line-height: $line-height-l;
+        color: $color-base-500;
+    }
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: $spacing-8;
+}
+
+.shareLinks {
+    margin: 0 !important;
+}

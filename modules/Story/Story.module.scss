@@ -1,0 +1,34 @@
+$story-container-max-width: 720px;
+
+.container {
+    margin: 0 auto;
+    background: $color-base-white;
+
+    @include desktop-up {
+        max-width: $story-container-max-width;
+    }
+}
+
+.date {
+    @include text-label;
+
+    color: $color-base-500;
+    margin: 0;
+}
+
+.linksAndDateWrapper {
+    display: flex;
+    flex-direction: column;
+
+    &.left {
+        align-items: flex-start;
+    }
+
+    &.right {
+        align-items: flex-end;
+    }
+
+    &.center {
+        align-items: center;
+    }
+}

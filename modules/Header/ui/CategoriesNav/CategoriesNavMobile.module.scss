@@ -1,0 +1,33 @@
+.container {
+    display: none;
+
+    @include mobile-only {
+        display: block;
+    }
+}
+
+.categoryButton {
+    padding: $spacing-2 0 !important;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid $color-borders;
+    margin: $spacing-4;
+}
+
+.dropdown {
+    padding: $spacing-3 0 !important;
+    background: $color-base-50;
+}
+
+.featuredContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-4;
+    padding: 0 $spacing-4;
+}
+
+.regularContainer {
+    padding: 0 $spacing-half;
+}

@@ -1,0 +1,33 @@
+.link {
+    @include border-radius-m;
+
+    display: block;
+    padding: $spacing-2;
+    text-decoration: none;
+    color: $color-base-700;
+    font-weight: $font-weight-medium;
+
+    &.active {
+        background: $color-base-50;
+    }
+
+    .withMobileDisplay & {
+        @include mobile-only {
+            @include text-label;
+
+            padding: $spacing-2 $grid-gutter-mobile;
+        }
+    }
+}
+
+.item {
+    width: max-content;
+    min-width: 100%;
+    max-width: 100%;
+
+    &.withMobileDisplay {
+        @include mobile-only {
+            border: 0;
+        }
+    }
+}

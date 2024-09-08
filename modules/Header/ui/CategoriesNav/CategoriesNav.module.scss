@@ -1,0 +1,11 @@
+.mobileCategories {
+    @include tablet-up {
+        display: none !important;
+    }
+}
+
+.desktopCategories {
+    @include mobile-only {
+        display: none !important;
+    }
+}

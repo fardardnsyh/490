@@ -1,0 +1,27 @@
+.container {
+    color: $color-base-700;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: $color-base-800;
+    }
+}
+
+.thumbnailWrapper {
+    @include medium-card-aspect-ratio;
+
+    position: relative;
+    margin: 0 auto $spacing-4;
+}
+
+.thumbnail {
+    @include border-radius-s;
+
+    object-fit: cover;
+    border: 1px solid $color-borders;
+}
+
+.title {
+    @include heading-2;
+}

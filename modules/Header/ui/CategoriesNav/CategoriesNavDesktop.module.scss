@@ -1,0 +1,146 @@
+.popover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    padding: 0;
+    background: $color-base-50;
+    border: 0;
+    border-bottom: 1px solid $color-base-200;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.button {
+    svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    &.rotateCaret {
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px + 2 * 24px;
+    margin: 0 auto;
+    padding: $spacing-4;
+}
+
+.grid {
+    display: grid;
+    gap: $spacing-4;
+    grid-template-columns: 1fr;
+
+    .featured {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: $spacing-2;
+
+        .category {
+            padding: $spacing-2;
+            border-radius: $border-radius-m;
+
+            /* stylelint-disable-next-line max-nesting-depth */
+            &:hover,
+            &:focus {
+                background: $color-base-200;
+            }
+        }
+    }
+
+    .regular {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0 $spacing-2;
+        align-content: flex-start;
+    }
+
+    .separator {
+        height: 1px;
+        background: $color-base-200;
+    }
+
+    &.withOneFeatured {
+        grid-template-columns: 275px 1fr;
+        gap: 56px;
+
+        .featured {
+            grid-template-columns: 1fr;
+        }
+
+        .separator {
+            display: none;
+        }
+    }
+
+    &.withTwoFeatured {
+        grid-template-columns: 1fr 440px;
+        gap: 56px;
+
+        .featured,
+        .regular {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .separator {
+            display: none;
+        }
+    }
+
+    &.withThreeFeatured {
+        .featured {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &.withFourFeatured {
+        .featured,
+        .regular {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+
+.link {
+    @include text-label;
+
+    padding: $spacing-1 $spacing-2;
+    color: $color-text;
+    font-weight: $font-weight-medium;
+    text-decoration: none;
+    border-radius: $border-radius-m;
+
+    &:hover,
+    &:focus {
+        background: $color-base-200;
+    }
+}
+
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba($color-base-600, 0.6);
+    z-index: -1;
+}
+
+.preventScroll {
+    overflow: hidden;
+}
+
+.transition {
+    transition: opacity 0.1s ease-in;
+}
+
+.transitionOpenStart {
+    opacity: 0;
+}
+
+.transitionOpenLeave {
+    opacity: 1;
+}
